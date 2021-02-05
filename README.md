@@ -8,7 +8,7 @@ The OVA is based around Debian GNU/Linux Buster and can be built using [Packer](
 The following Packer templates will build an OVA using a VMware vSphere ESXi host (although it is easily modifiable to build from VMware Workstation or Fusion) from a Debian Buster minimal image. After the creation, the VM will be customizable using OVF parameters, so network and root password will be assignable during deployment. If no network is configured during deployment, it will use DHCP.
 
 
---
+---
 
 **Requirements**
 
@@ -18,7 +18,7 @@ The following Packer templates will build an OVA using a VMware vSphere ESXi hos
 - [Packer 1.6.6](https://www.packer.io/downloads)
 - [OVFTool](https://www.vmware.com/support/developer/ovf/) installed and configured in your PATH.
 
---
+---
 
 **Building**
 
