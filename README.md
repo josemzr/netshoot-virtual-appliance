@@ -17,24 +17,26 @@ The following Packer templates will build an OVA using a VMware vSphere ESXi hos
 
 To build this template, you will need to edit the netshoot-builder.json file with your ESXi values:
 
-`{
+```
+{
   "builder_host": "packerbuild.sclab.local",
   "builder_host_username": "root",
   "builder_host_password": "VMware1!",
   "builder_host_datastore": "datastore1",
   "builder_host_portgroup": "VM Network"
 }
+```
 
 Then run the build-netshoot.sh script or execute the following commands:
 
-`
+```
 rm -rf output-netshoot/*
 
 packer build \
     --var-file="netshoot-builder.json" \
     --var-file="netshoot-1.0.json" \
     netshoot.json
-`
+```
 
 ---
 
@@ -43,7 +45,7 @@ packer build \
 
 The following packages are included in Netshoot Virtual Appliance:
 
-`
+```
 apache2-utils
 bash
 dnsutils
@@ -87,7 +89,7 @@ termshark
 util-linux
 vim
 sshpass
-`
+```
 
 
 **Acknowledgements**
