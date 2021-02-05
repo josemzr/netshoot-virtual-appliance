@@ -1,7 +1,7 @@
 # Netshoot Virtual Appliance
 
 
-This is a template to have the Netshoot project by Nicolaka (https://github.com/nicolaka/netshoot) in an OVA format. It is very useful for those situations when you require a light and fast to deploy VM to troubleshoot a faulty network or VM environment, but don't want to install a full VM. Currently, the OVA is under 600MB.
+This is a template to have the Netshoot project by Nicolaka (https://github.com/nicolaka/netshoot) in an OVA format. It is very useful for those situations when you require a light and fast to deploy VM to troubleshoot a faulty network or VM environment, but don't want to install a full VM.
 
 The OVA is based around Debian GNU/Linux Buster and can be built using [Packer](https://www.packer.io). The Packer template is based around the Debian template developed by [Timo Sugliani](https://github.com/tsugliani/packer-vsphere-debian-appliances). 
 
