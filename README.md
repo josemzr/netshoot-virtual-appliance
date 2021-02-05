@@ -62,6 +62,8 @@ bird
 bridge-utils
 curl
 dhcping
+docker
+kubectl
 ldnsutils
 ethtool
 net-tools
@@ -100,6 +102,7 @@ vim
 sshpass
 ```
 
+---
 
 **Acknowledgements**
 
