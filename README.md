@@ -23,7 +23,7 @@ To build this template, you will need to edit the netshoot-builder.json file wit
   "builder_host_password": "VMware1!",
   "builder_host_datastore": "datastore1",
   "builder_host_portgroup": "VM Network"
-}`
+}
 
 Then run the build-netshoot.sh script or execute the following commands:
 
