@@ -53,6 +53,9 @@ packer build \
 
 Pre-built releases are uploaded in [GitHub releases](https://github.com/josemzr/netshoot-virtual-appliance/releases)
 
+---
+
+
 **Included Packages:**
 
 The following packages are included in Netshoot Virtual Appliance:
