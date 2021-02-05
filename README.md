@@ -1,9 +1,14 @@
 # Netshoot Virtual Appliance
+
+
 This is a template to have the Netshoot project by Nicolaka (https://github.com/nicolaka/netshoot) in an OVA format. It is very useful for those situations when you require a light and fast to deploy VM to troubleshoot a faulty network or VM environment, but don't want to install a full VM. Currently, the OVA is under 600MB.
 
 The OVA is based around Debian GNU/Linux Buster and can be built using [Packer](https://www.packer.io). The Packer template is based around the Debian template developed by [Timo Sugliani](https://github.com/tsugliani/packer-vsphere-debian-appliances). 
 
 The following Packer templates will build an OVA using a VMware vSphere ESXi host (although it is easily modifiable to build from VMware Workstation or Fusion) from a Debian Buster minimal image. After the creation, the VM will be customizable using OVF parameters, so network and root password will be assignable during deployment. If no network is configured during deployment, it will use DHCP.
+
+
+--
 
 **Requirements**
 
@@ -13,9 +18,12 @@ The following Packer templates will build an OVA using a VMware vSphere ESXi hos
 - [Packer 1.6.6](https://www.packer.io/downloads)
 - [OVFTool](https://www.vmware.com/support/developer/ovf/) installed and configured in your PATH.
 
+--
+
 **Building**
 
 To build this template, you will need to edit the netshoot-builder.json file with your ESXi values:
+
 
 ```
 {
@@ -26,6 +34,7 @@ To build this template, you will need to edit the netshoot-builder.json file wit
   "builder_host_portgroup": "VM Network"
 }
 ```
+
 
 Then run the build-netshoot.sh script or execute the following commands:
 
@@ -94,4 +103,5 @@ sshpass
 
 **Acknowledgements**
 
-This project is possible because of the great work done in the [packer-vsphere-debian-appliances] (https://github.com/tsugliani/packer-vsphere-debian-appliances) project and the amazing [Netshoot] (https://github.com/nicolaka/netshoot) by Nicolaka. Also, Robert Guske contributed to the previous project, Netshoot-OVA.
+
+This project is possible because of the great work done in the [packer-vsphere-debian-appliances](https://github.com/tsugliani/packer-vsphere-debian-appliances) project and the amazing [Netshoot](https://github.com/nicolaka/netshoot) by Nicolaka. Also, Robert Guske contributed to the previous project, Netshoot-OVA.
