@@ -13,7 +13,7 @@
             <Label>IP Address</Label>
             <Description>IP Address of the system (Leave blank for DHCP)</Description>
         </Property>
-        <Property ovf:key="guestinfo.netprefix" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+        <Property ovf:key="guestinfo.netprefix" ovf:type="string" ovf:qualifiers="MaxLen(2)" ovf:userConfigurable="true" ovf:value="">
             <Label>Network CIDR Prefix</Label>
             <Description>Network CIDR Prefix (Example: 24)</Description>
         </Property>
@@ -30,7 +30,7 @@
             <Description>Domain</Description>
         </Property>
         <Category>OS Credentials</Category>
-        <Property ovf:key="guestinfo.password" ovf:password="true" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+        <Property ovf:key="guestinfo.password" ovf:password="true" ovf:type="string" ovf:qualifiers="MinLen(4),MaxLen(100)" ovf:userConfigurable="true" ovf:value="">
             <Label>Root Password</Label>
             <Description>Password to login in as root. Please use a secure password</Description>
         </Property>
