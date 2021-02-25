@@ -5,10 +5,6 @@
       <Version>{{APPLIANCE_VERSION}}</Version>
       <ProductUrl>https://github.com/josemzr/netshoot-ova</ProductUrl>
       <Category>Networking</Category>
-        <Property ovf:key="guestinfo.hostname" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
-            <Label>Hostname</Label>
-            <Description>Hostname of system</Description>
-        </Property>
         <Property ovf:key="guestinfo.ipaddress" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
             <Label>IP Address</Label>
             <Description>IP Address of the system (Leave blank for DHCP)</Description>
