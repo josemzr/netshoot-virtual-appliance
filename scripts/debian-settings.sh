@@ -28,7 +28,7 @@ sed -i 's/#Banner none/Banner \/etc\/issue.net/g' /etc/ssh/sshd_config
 
 echo '> Setup Netshoot hostname and adding it to /etc/hosts'
 hostnamectl set-hostname netshoot
-echo "127.0.1.1  frontend" >> /etc/hosts
+sed -i s/debian/netshoot/g /etc/hosts
 
 sed -i 's/#Banner none/Banner \/etc\/issue.net/g' /etc/ssh/sshd_config
 
