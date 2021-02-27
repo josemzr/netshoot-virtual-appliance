@@ -34,6 +34,8 @@
       "remote_host": "{{ user `builder_host` }}",
       "remote_password": "{{ user `builder_host_password` }}",
       "remote_type": "esx5",
+      "vnc_over_websocket": true,
+      "insecure_connection": true,
       "remote_username": "{{ user `builder_host_username` }}",
       "shutdown_command": "/sbin/shutdown -Ph now",
       "shutdown_timeout": "10s",
