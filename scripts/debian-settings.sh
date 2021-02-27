@@ -25,6 +25,13 @@ echo " Netshoot Virtual Appliance" | tee -a /etc/issue /etc/issue.net > /dev/nul
 echo "=============================" | tee -a /etc/issue /etc/issue.net > /dev/null
 sed -i 's/#Banner none/Banner \/etc\/issue.net/g' /etc/ssh/sshd_config
 
+
+echo '> Setup Netshoot hostname'
+hostnamectl set-hostname netshoot
+echo "127.0.1.1  frontend" >> /etc/hosts
+
+sed -i 's/#Banner none/Banner \/etc\/issue.net/g' /etc/ssh/sshd_config
+
 echo '> Enable rc.local facility for debian-init.py'
 cat << EOF > /etc/rc.local
 #!/bin/sh -e
