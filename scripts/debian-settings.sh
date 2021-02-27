@@ -26,7 +26,7 @@ echo "=============================" | tee -a /etc/issue /etc/issue.net > /dev/n
 sed -i 's/#Banner none/Banner \/etc\/issue.net/g' /etc/ssh/sshd_config
 
 
-echo '> Setup Netshoot hostname'
+echo '> Setup Netshoot hostname and adding it to /etc/hosts'
 hostnamectl set-hostname netshoot
 echo "127.0.1.1  frontend" >> /etc/hosts
 
