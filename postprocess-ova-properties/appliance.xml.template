@@ -21,10 +21,6 @@
             <Label>DNS</Label>
             <Description>DNS Servers (space separated)</Description>
         </Property>
-        <Property ovf:key="guestinfo.domain" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
-            <Label>Domain</Label>
-            <Description>Domain</Description>
-        </Property>
         <Category>OS Credentials</Category>
         <Property ovf:key="guestinfo.password" ovf:password="true" ovf:type="string" ovf:qualifiers="MinLen(4),MaxLen(100)" ovf:userConfigurable="true" ovf:value="">
             <Label>Root Password</Label>
