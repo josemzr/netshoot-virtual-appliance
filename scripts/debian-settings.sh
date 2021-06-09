@@ -13,6 +13,9 @@ apt-get install -y resolvconf
 echo '> SSH directory'
 mkdir -vp $HOME/.ssh
 
+echo '> Adding vimrc'
+echo "set mouse-=a" >> /root/.vimrc
+
 echo '> Debian acts as a Router now'
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
