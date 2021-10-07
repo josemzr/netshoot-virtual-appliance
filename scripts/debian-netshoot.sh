@@ -22,6 +22,9 @@ rm -rf termshark_2.2.0_linux_x64.tar.gz
 chmod +x termshark
 mv termshark /usr/local/bin
 
+# Install Carvel tools
+curl -L https://carvel.dev/install.sh | bash
+
 # Refresh sources
 apt-get update
 
