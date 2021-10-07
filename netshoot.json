@@ -91,6 +91,11 @@
       "type": "file"
     },
     {
+      "destination": "/opt/debian-resizefs.sh",
+      "source": "files/debian-resizefs.sh",
+      "type": "file"
+    },
+    {
       "type": "shell",
       "environment_vars": ["DEBIAN_FRONTEND=noninteractive"],
       "scripts": [
@@ -100,7 +105,8 @@
         "scripts/debian-system.sh",
         "scripts/debian-settings.sh",
         "scripts/debian-netshoot.sh",
-        "scripts/debian-cleanup.sh"
+        "scripts/debian-cleanup.sh",
+        "scripts/debian-resizefs.sh"
       ]
     }
   ]
