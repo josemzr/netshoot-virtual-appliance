@@ -25,6 +25,9 @@ mv termshark /usr/local/bin
 # Install Carvel tools
 curl -L https://carvel.dev/install.sh | bash
 
+# Make the tty-share executable (previously copied from the files folder)
+chmod +x /usr/local/bin/tty-share
+
 # Refresh sources
 apt-get update
 
