@@ -28,6 +28,11 @@ curl -L https://carvel.dev/install.sh | bash
 # Make the tty-share executable (previously copied from the files folder)
 chmod +x /usr/local/bin/tty-share
 
+# Install graftcp
+wget https://github.com/hmgle/graftcp/releases/download/v0.4.0/graftcp_0.4.0-1_amd64.deb
+dpkg -i graftcp_0.4.0-1_amd64.deb
+rm -rf graftcp_0.4.0-1_amd64.deb
+
 # Refresh sources
 apt-get update
 
