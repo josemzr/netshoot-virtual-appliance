@@ -3,7 +3,6 @@
     "author": "Jose Manzaneque",
     "description": "Netshoot",
     "vm_name": "netshoot",
-    "guest_os_type": "debian10-64",
     "hostname": "debian",
     "numvcpus": "2",
     "ramsize": "2048",
