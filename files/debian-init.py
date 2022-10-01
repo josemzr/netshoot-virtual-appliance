@@ -44,7 +44,10 @@ def appliance_create_network_config(properties):
 
     if properties['guestinfo.ipaddress']:
 
-        network_cmd = """cat << EOF > /etc/network/interfaces
+       netprefix_string = properties['guestinfo.netprefix'].split("(", 1)
+       netprefix_formatted = netprefix_string[0]
+
+       network_cmd = """cat << EOF > /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
@@ -64,37 +67,34 @@ EOF
 systemctl restart networking
     """.format(
             ipaddress=properties['guestinfo.ipaddress'],
-            netprefix=properties['guestinfo.netprefix'],
+            netprefix=netprefix_formatted,
             gateway=properties['guestinfo.gateway'],
             dns=properties['guestinfo.dns']
         )
 
-        subprocess.Popen(network_cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
+       subprocess.Popen(network_cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
 
 
-#Hostfile modification not needed (netshoot hostname set static)
-#def appliance_create_hostfile_config(properties):
-#    """
-#    Create debian /etc/hosts file for dnsmasq expand-hosts directive.
-#    """
-#
-#    if properties['guestinfo.hostname'] and \
-#       properties['guestinfo.ipaddress'] and \
-#       properties['guestinfo.domain']:
-#
-#        hostfile_cmd = """cat << EOF > /etc/hosts
-#127.0.0.1       localhost
-#{ipaddress}     {hostname}.{domain}    {hostname}
-#
-#EOF
-#hostnamectl set-hostname {hostname}
-#        """.format(
-#            hostname=properties['guestinfo.hostname'],
-#            ipaddress=properties['guestinfo.ipaddress'],
-#            domain=properties['guestinfo.domain']
-#        )
-#
-#        subprocess.Popen(hostfile_cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
+def appliance_create_hostfile_config(properties):
+    """
+    Create debian /etc/hosts file for dnsmasq expand-hosts directive.
+    """
+
+    if properties['guestinfo.hostname'] and \
+       properties['guestinfo.ipaddress']:
+
+        hostfile_cmd = """cat << EOF > /etc/hosts
+127.0.0.1       localhost
+{ipaddress}     {hostname}
+
+EOF
+hostnamectl set-hostname {hostname}
+        """.format(
+            hostname=properties['guestinfo.hostname'],
+            ipaddress=properties['guestinfo.ipaddress']
+        )
+
+        subprocess.Popen(hostfile_cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
 
 
 def appliance_update_credentials(properties):
@@ -121,5 +121,5 @@ def appliance_update_credentials(properties):
 
 properties = appliance_get_ovf_properties()
 appliance_create_network_config(properties)
-#appliance_create_hostfile_config(properties)
+appliance_create_hostfile_config(properties)
 appliance_update_credentials(properties)
