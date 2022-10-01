@@ -22,7 +22,7 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_type_id": "zeroedthick",
+      "disk_type_id": "thin",
       "disk_size": "8000",
       "format": "ovf",
       "headless": false,
