@@ -80,8 +80,7 @@ def appliance_create_hostfile_config(properties):
     Create debian /etc/hosts file for dnsmasq expand-hosts directive.
     """
 
-    if properties['guestinfo.hostname'] and \
-       properties['guestinfo.ipaddress']:
+    if properties['guestinfo.ipaddress']:
 
         hostfile_cmd = """cat << EOF > /etc/hosts
 127.0.0.1       localhost
@@ -90,7 +89,7 @@ def appliance_create_hostfile_config(properties):
 EOF
 hostnamectl set-hostname {hostname}
         """.format(
-            hostname=properties['guestinfo.hostname'],
+            hostname='netshoot',
             ipaddress=properties['guestinfo.ipaddress']
         )
 
