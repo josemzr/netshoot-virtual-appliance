@@ -88,8 +88,13 @@
       "type": "file"
     },
     {
-      "destination": "/sbin/debian-init.py",
-      "source": "files/debian-init.py",
+      "destination": "/opt/debian-setup.sh",
+      "source": "files/debian-setup.sh",
+      "type": "file"
+    },
+    {
+      "destination": "/opt/getOvfProperty.py",
+      "source": "files/getOvfProperty.py",
       "type": "file"
     },
     {
