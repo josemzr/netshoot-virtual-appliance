@@ -1,14 +1,14 @@
 {
-    "version": "1.0",
-    "author": "Jose Manzaneque",
-    "description": "Netshoot",
-    "vm_name": "netshoot",
-    "hostname": "debian",
-    "numvcpus": "2",
-    "ramsize": "2048",
-    "iso_checksum": "c433254a7c5b5b9e6a05f9e1379a0bd6ab3323f89b56537b684b6d1bd1f8b6ad",
-    "iso_checksum_type": "sha256",
-    "iso_url": "https://cdimage.debian.org/cdimage/archive/10.10.0/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso",
-    "guest_username": "root",
-    "guest_password": "VMware1!"
+	"version": "1.0",
+	"author": "Jose Manzaneque",
+	"description": "Netshoot vSphere image",
+	"vm_name": "netshoot",
+	"hostname": "netshoot",
+	"numvcpus": "2",
+	"ramsize": "2048",
+	"iso_checksum": "d490a35d36030592839f24e468a5b818c919943967012037d6ab3d65d030ef7f",
+	"iso_checksum_type": "sha256",
+	"iso_url": "https://cdimage.debian.org/cdimage/archive/11.4.0/amd64/iso-cd/debian-11.4.0-amd64-netinst.iso",
+	"guest_username": "root",
+	"guest_password": "VMware1!"
 }
