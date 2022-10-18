@@ -28,7 +28,6 @@ __CUSTOMIZE_DEBIAN__
 }
 
 configureStaticNetwork() {
-
     echo -e "Configuring Static IP Address ..." > /dev/console
     cat > /etc/network/interfaces << __CUSTOMIZE_DEBIAN__
 # This file describes the network interfaces available on your system
@@ -47,17 +46,12 @@ __CUSTOMIZE_DEBIAN__
 }
 
 configureDNS(){
-
 # Treating elements in guestinfo.dns as an array to add them to /etc/resolv.conf
 # Note this only runs if static IP address is being used
-
 echo -e "Configuring DNS ..." > /dev/console
-
 # Clear up previous /etc/resolv.conf
 rm -rf /etc/resolv.conf
-
 IFS=', ' read -r -a array <<< "${DNS_SERVER}"
-
 for element in "${array[@]}"
 do
     echo "nameserver $element" >> /etc/resolv.conf
