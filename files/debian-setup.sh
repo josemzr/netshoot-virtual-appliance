@@ -42,8 +42,26 @@ auto eth0
 iface eth0 inet static
     address ${IP_ADDRESS}/${NETPREFIX}
     gateway ${GATEWAY}
-    dns-nameservers ${DNS_SERVER}
 __CUSTOMIZE_DEBIAN__
+
+}
+
+configureDNS(){
+
+# Treating elements in guestinfo.dns as an array to add them to /etc/resolv.conf
+# Note this only runs if static IP address is being used
+
+echo -e "Configuring DNS ..." > /dev/console
+
+# Clear up previous /etc/resolv.conf
+rm -rf /etc/resolv.conf
+
+IFS=', ' read -r -a array <<< "${DNS_SERVER}"
+
+for element in "${array[@]}"
+do
+    echo "nameserver $element" >> /etc/resolv.conf
+done
 }
 
 configureHostname() {
@@ -116,6 +134,7 @@ if [ -z "${IP_ADDRESS}" ] || [ -z "${GATEWAY}" ] || [ "${IP_ADDRESS}" == "null" 
     else
 
     configureStaticNetwork
+    configureDNS
     configureHostname
     restartNetwork
     configureRootPassword
