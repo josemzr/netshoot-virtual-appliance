@@ -129,8 +129,8 @@ if [ -z "${IP_ADDRESS}" ] || [ -z "${GATEWAY}" ] || [ "${IP_ADDRESS}" == "null" 
 
     configureStaticNetwork
     configureHostname
-    configureDNS
     restartNetwork
+    configureDNS
     configureRootPassword
     addCertStore
     addSshKey
